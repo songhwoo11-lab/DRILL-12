@@ -1,4 +1,5 @@
 import game_world
+import random
 from pico2d import get_canvas_width, load_image
 
 
@@ -8,7 +9,7 @@ class Ball:
         self.y = y
         self.direction = direction
         self.speed = 10
-        self.image = load_image('ball41x41.png')
+        self.image = load_image('ball21x21.png') if random.randint(0, 1) else load_image('ball41x41.png')
 
     def update(self):
         self.x += self.direction * self.speed
